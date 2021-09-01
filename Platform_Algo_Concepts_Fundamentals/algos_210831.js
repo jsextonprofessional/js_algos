@@ -13,7 +13,7 @@ function setAndSwap() {
     console.log("myName:", myName);
 }
 
-setAndSwap();
+// setAndSwap();
 
 
 // Print -52 to 1066
@@ -25,7 +25,7 @@ function floopPrinter() {
     }
 }
 
-floopPrinter()
+// floopPrinter()
 
 // Don’t Worry, Be Happy
 // Create beCheerful(). Within it, console.log string "good morning!" Call it 98 times.
@@ -36,7 +36,7 @@ function beCheerful() {
     }
 }
 
-beCheerful()
+// beCheerful()
 
 
 // Multiples of Three – but Not All
@@ -49,7 +49,8 @@ function multiplesOfThree() {
         }
     }
 }
-multiplesOfThree()
+
+// multiplesOfThree()
 
 // Printing Integers with While
 // Print integers from 2000 to 5280, using a WHILE.
@@ -62,7 +63,7 @@ function whilePrinter() {
     }
 }
 
-whilePrinter();
+// whilePrinter();
 
 
 // You Say It’s Your Birthday
@@ -76,53 +77,150 @@ function isBirthday(input1, input2) {
     }
 }
 
-isBirthday(10, 21);
-isBirthday(21, 10);
-isBirthday(19, 10);
-isBirthday(10, 19);
-isBirthday(11, 21);
-isBirthday(21, 11);
+// isBirthday(10, 21);
+// isBirthday(21, 10);
+// isBirthday(19, 10);
+// isBirthday(10, 19);
+// isBirthday(11, 21);
+// isBirthday(21, 11);
 
 
 // Leap Year
 // Write a function that determines whether a given year is a leap year. If a year is divisible by four, it is a leap year, unless it is divisible by 100. However, if it is divisible by 400, then it is.
 
+function leapYear(year) {
+    if (year % 100 == 0 && year % 400 != 0) {
+        console.log("Year: ", year, "- Not a leap year but YEET!");
+    } else if (year == 400 || year % 4 == 0) {
+            console.log("Year: ", year, "- HAPPY LEAP YEAR YEET!");
+    } else {
+        console.log("Year: ", year, "- Not a leap year but YEET!");
+    }
+}
+
+// leapYear(2016)
+// leapYear(2020)
+// leapYear(2021)
+// leapYear(100)
+// leapYear(200)
+// leapYear(300)
+// leapYear(400)
 
 
 // Print and Count
 // Print all integer multiples of 5, from 512 to 4096. Afterward, also log how many there were.
 
- 
+function printAndCount() {
+    var counter = 0
+    var multiples = []
+    for (var i = 512; i < 4097; i++) {
+        if (i % 5 == 0) {
+            multiples.push(i);
+            counter += 1
+        }
+    }
+    console.log(`There are ${counter} multiples of 5 between 512 and 4097 . They are: ${multiples}.`);
+}
+
+// printAndCount()
 
 // Multiples of Six
 // Print multiples of 6 up to 60,000, using a WHILE.
 
- 
+function multiplesOfSix() {
+    var num = 0;
+    var sixes = [];
+    while (num < 60001) {
+        if (num % 6 == 0) {
+            sixes.push(num);
+        }
+        num = num + 1;
+    }
+    console.log(`These are the multiples of 6 from 0-60,000: ${sixes}`);
+}
+
+// multiplesOfSix();
+
 
 // Counting, the Dojo Way
 // Print integers 1 to 100. If divisible by 5, print "Coding" instead. If by 10, also print " Dojo".
 
- 
+function dojoCounter() {
+    for (var i = 1; i < 101; i++) {
+        if (i % 10 == 0) {
+            console.log("CodingDojo");
+        } else if (i % 5 == 0) {
+            console.log("Coding");
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+// dojoCounter();
+
 
 // What Do You Know?
 // Your function will be given an input parameter incoming. Please console.log this value.
 
- 
+function whatDoYouKnow(input) {
+    console.log(`input: ${input}`);
+}
+
+// whatDoYouKnow(1);
+// whatDoYouKnow(69);
+// whatDoYouKnow(420);
+// whatDoYouKnow("Hello Clarice");
+
 
 // Whoa, That Sucker’s Huge…
 // Add odd integers from -300,000 to 300,000, and console.log the final sum. Is there a shortcut?
 
- 
+function hugeSucker() {
+    var sum = 0;
+    var num = -300001
+    while (num < 30001) {
+        console.log(`Current Num: ${num}`);
+        console.log(`Current Sum: ${sum}`);
+        sum += num;
+        num += 2;
+    }
+    console.log(`Final Sum: ${sum}`);
+}
+//     var sum = 0
+//     for (var i = -3001; i < 3001; i + 2) {
+//         sum += i;
+//         console.log(`Current sum: ${sum}`);
+//     }
+//     console.log(`Final sum: ${sum}`);
+// }
+
+// hugeSucker();
+
 
 // Countdown by Fours
 // Log positive numbers starting at 2016, counting down by fours (exclude 0), without a FOR loop.
 
- 
+function countdownByFours() {
+    var num = 2016;
+    while (num > 0) {
+        console.log(num);
+        num -= 4;
+    }
+}
+
+countdownByFours();
+
 
 // Flexible Countdown
 // Based on earlier “Countdown by Fours”, given lowNum, highNum, mult, print multiples of mult from highNum down to lowNum, using a FOR. For (2,9,3), print 9 6 3 (on successive lines).
 
- 
+function flexibleCountdown() {
+
+}
+
+flexibleCountdown();
+
 
 // The Final Countdown
 // This is based on “Flexible Countdown”. The parameter names are not as helpful, but the problem is essentially identical; don’t be thrown off! Given 4 parameters (param1,param2,param3,param4), print the multiples of param1, starting at param2 and extending to param3. One exception: if a multiple is equal to param4, then skip (don’t print) it. Do this using a WHILE. Given (3,5,17,9), print 6,12,15 (which are all of the multiples of 3 between 5 and 17, and excluding the value 9).
