@@ -20,7 +20,7 @@ function setAndSwap() {
 // Print integers from -52 to 1066 using a FOR loop.
 
 function floopPrinter() {
-    for (var i = -52; i <1067; i++ ) {
+    for (var i = -52; i < 1067; i++) {
         console.log("floopPrinter:", i)
     }
 }
@@ -92,7 +92,7 @@ function leapYear(year) {
     if (year % 100 == 0 && year % 400 != 0) {
         console.log("Year: ", year, "- Not a leap year but YEET!");
     } else if (year == 400 || year % 4 == 0) {
-            console.log("Year: ", year, "- HAPPY LEAP YEAR YEET!");
+        console.log("Year: ", year, "- HAPPY LEAP YEAR YEET!");
     } else {
         console.log("Year: ", year, "- Not a leap year but YEET!");
     }
@@ -209,18 +209,54 @@ function countdownByFours() {
     }
 }
 
-countdownByFours();
+// countdownByFours();
 
 
 // Flexible Countdown
 // Based on earlier “Countdown by Fours”, given lowNum, highNum, mult, print multiples of mult from highNum down to lowNum, using a FOR. For (2,9,3), print 9 6 3 (on successive lines).
 
-function flexibleCountdown() {
-
+function flexibleCountdown(lowNum, highNum, mult) {
+    var multHolder = []
+    if (highNum < lowNum) {
+        console.log(`highNum must be greater than lowNum. highNum: ${highNum}, lowNum: ${lowNum}.`);
+    } else if (mult == 0) {
+        console.log(`cannot multiply by 0. highNum: ${highNum}, lowNum: ${lowNum}, mult: ${mult}.`);
+    } else if (mult > highNum) {
+        console.log(`mult too large for range. highNum: ${highNum}, lowNum: ${lowNum}, mult: ${mult}.`);
+    } else {
+        for (var i = highNum; i > lowNum; i--) {
+            console.log(`i: ${i}`);
+            if (i % mult == 0) {
+                multHolder.push(i);
+                console.log(`${i} is a multiple of ${mult} - push it`);
+            }
+            console.log(multHolder);
+        }
+    }
 }
 
-flexibleCountdown();
-
+// flexibleCountdown(1, 10, 2);
+// flexibleCountdown(5, 500, 5);
+// flexibleCountdown(9, 21, 3);
+// flexibleCountdown(10, 1, 2);
+// flexibleCountdown(1, 2, 10);
+// flexibleCountdown(1,10,0);
 
 // The Final Countdown
 // This is based on “Flexible Countdown”. The parameter names are not as helpful, but the problem is essentially identical; don’t be thrown off! Given 4 parameters (param1,param2,param3,param4), print the multiples of param1, starting at param2 and extending to param3. One exception: if a multiple is equal to param4, then skip (don’t print) it. Do this using a WHILE. Given (3,5,17,9), print 6,12,15 (which are all of the multiples of 3 between 5 and 17, and excluding the value 9).
+
+// param1 = mult; param2 = start; param3 = end; param4 = kill;
+// use while loop
+// if param1 == param4
+function finalCountdown(param1, param2, param3, param4) {
+    var multHolder = []
+    while (param2 < param3) {
+        console.log(param2);
+        if (param2 % param1 == 0 && param2 != param4) {
+            multHolder.push(param2)
+        }
+        param2 += 1; 
+    }
+    console.log(multHolder);
+}
+finalCountdown(3, 4, 17, 9);
