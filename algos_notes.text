@@ -1,0 +1,2 @@
+> Write tests to try to break the function, then rewrite the function to pass said tests. Repeat.
+> What's the actual goal of some of these algos? Is it what i return? Is it what I log? 
