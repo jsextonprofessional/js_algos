@@ -169,6 +169,17 @@ const previousLengths = array => {
 // 9. Add Seven to Most
 // Build a function that accepts an array. Return a new array with all values except first, adding 7 to each. Do not alter the original array.
 
+const addSevenToMost = array => {
+    let newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (i > 0 && i < array.length) {
+            newArray.push(array[i] + 7)
+        }
+    }
+    console.log(`original array: ${array} has ${array.length} items; new array: ${newArray} has ${newArray.length} items`);
+}
+
+// addSevenToMost([-2,-1,0,1,2,3,4]);
 
 
 // 10. Reverse Array
