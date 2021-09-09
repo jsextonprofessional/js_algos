@@ -98,32 +98,50 @@ const countPositives = array => {
 // countPositives([-2,-1,0,1,2,3,69]);
 
 
-// 6. Evens and Odds - ******************* FIX ME *******************
+// 6. Evens and Odds - ******************* "else" EDGE CASE DOESN'T WORK ****************************************
 // Create a function that accepts an array. Every time that array has three odd values in a row, print "That’s odd!" Every time the array has three evens in a row, print "Even more so!"
 
 const evensAndOdds = array => {
+    let oddHodler = ["yeet"];
+    let evenHodler = ["yoink"];
     for (let i = 0; i < array.length; i++) {
         if (array[i] % 2 != 0 && array[i + 1] % 2 != 0 && array[i + 2] % 2 != 0) {
-            console.log(`That's odd. array: ${array}`);
+            oddHodler.push(array[i],array[i+1],array[i+2]);
+            console.log(`That's odd -- array: ${array}; oddHodler: ${oddHodler}; evenHodler: ${evenHodler}.`);
+            return;
         } else if (array[i] % 2 == 0 && array[i + 1] % 2 == 0 && array[i + 2] % 2 == 0) {
-            console.log(`Even more so. array: ${array}`);
+            evenHodler.push(array[i],array[i+1],array[i+2]);
+            console.log(`Even more so -- array: ${array}; oddHodler: ${oddHodler}; evenHodler: ${evenHodler}.`);
             return;
-        } else {
-            console.log(`nothing weird here. array: ${array}`);
-            return;
-        }
+        } 
+        // else {
+        //     console.log(`nothing weird here. array: ${array}; oddHodler: ${oddHodler}; evenHodler: ${evenHodler}.`);
+        //     return;
+        // }
     }
 }
 
-evensAndOdds([-3,-1,0,1,3,69,70]);
-evensAndOdds([-2,0,1,2,4,6,9]);
-evensAndOdds([1,2,3,4,5,6]);
+// evensAndOdds([-3,-1,0,1,3,69,70]);
+// evensAndOdds([-2,0,1,2,4,6,9]);
+// evensAndOdds([1,2,3,4,5,6]);
 
 
 // 7. Increment the Seconds
 // Given arr, add 1 to odd elements ([1], [3], etc.), console.log all values and return arr.
 
+const incrementTheSeconds = array => {
+    console.log(`original array: ${array}`);
+    for (let i = 0; i < array.length; i++) {
+        console.log(`current index ${i}: ${array[i]}`);
+        if (array[i] % 2 != 0) {
+            array[i] += 1;
+            console.log(`updated index ${i}: ${array[i]}`);
+        }
+    }
+    console.log(`updated array: ${array}`);
+}
 
+// incrementTheSeconds([-3,0,1,2,3]);
 
 
 // 8. Previous Lengths
