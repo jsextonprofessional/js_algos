@@ -147,6 +147,23 @@ const incrementTheSeconds = array => {
 // 8. Previous Lengths
 // You are passed an array containing strings. Working within that same array, replace each string with a number – the length of the string at previous array index – and return the array.
 
+const previousLengths = array => {
+    console.log(`original array: ${array}`);
+    let stringHodler = [];
+    let stringCounter = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] == "string") {
+            stringHodler.push(array[i]);
+            for (let x = 0; x < stringHodler.length; x ++) {
+                stringCounter = stringHodler[x].length;
+                array[i] = stringCounter;
+                console.log(`updated array: ${array}, stringHodler: ${stringHodler}, stringCounter: ${stringCounter}`);
+            }
+        }
+    }
+}
+
+// previousLengths([-4,0,1,"yeet",3,"tommy johns"]);
 
 
 // 9. Add Seven to Most
