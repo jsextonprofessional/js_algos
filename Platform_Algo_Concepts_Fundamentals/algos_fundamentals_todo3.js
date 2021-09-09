@@ -198,24 +198,74 @@ const reverseArray = array => {
     console.log(`updated array: ${array}`);
 }
 
-reverseArray([-2,0,1,2,3,"yeet"]);
+// reverseArray([-2,0,1,2,3,"yeet"]);
 
 
 // 11. Outlook: Negative
 // Given an array, create and return a new one containing all the values of the provided array, made negative (not simply multiplied by -1). Given [1,-3,5], return [-1,-3,-5].
 
+const outlookNegative = array => {
+    console.log(`original array: ${array}`);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > 0) {
+            array[i] *= -1; 
+        }
+    }
+    console.log(`array: ${array}`);
+}
+
+// outlookNegative([-2,0,1,2,3,4]);
 
 
 // 12. Always Hungry
 // Create a function that accepts an array, and prints "yummy" each time one of the values is equal to "food". If no array elements are "food", then print "I'm hungry" once.
 
+const alwaysHungry = array => {
+    for (let i = 0; i < array.length; i++) {
+        // console.log(`current index: ${array[i]}`);
+        if (array[i] == "food") {
+            console.log(`yummy`);
+            return;
+        } else {
+            // return;
+            console.log(`dadi is hungos`);
+        }
+    }
+}
+
+// alwaysHungry([-2,0,1,2,3]);
+// alwaysHungry([-2,0,1,2,3,"food"]);
 
 
 // 13. Swap Toward the Center
 // Given array, swap first and last, third and third-tolast, etc. Input[true,42,"Ada",2,"pizza"] becomes ["pizza",42,"Ada",2,true].  Change [1,2,3,4,5,6] to [6,2,4,3,5,1].
 
+const swapTowardTheCenter = array => {
+    console.log(`original array: ${array}`);
+    let n = array.length;
+    let middle = (n/2);
+    let temp = null;
+    for (let i = 0; i < middle; i++) {
+        temp = array[i];
+        array[i] = array[n-1-i];
+        array[n-1-i] = temp;
+    }
+    console.log(`updated array: ${array}`);
+}
 
+// swapTowardTheCenter([true,42,"Ada",2,"pizza"]);
+// swapTowardTheCenter([1,2,3,4,5,6]);
 
 
 // 14. Scale the Array
 // Given array arr and number num, multiply each arr value by num, and return the changed arr.
+
+const scaleTheArray = (array, num) => {
+    console.log(`original array: ${array}`);
+    for (let i = 0; i < array.length; i++) {
+        array[i] *= num;
+    }
+    console.log(`updated array: ${array}`);
+}
+
+scaleTheArray([-2,0,1,2,3], 2);
