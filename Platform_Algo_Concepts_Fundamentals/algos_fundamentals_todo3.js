@@ -185,6 +185,20 @@ const addSevenToMost = array => {
 // 10. Reverse Array
 // Given array, write a function to reverse values, in-place. Example: reverse([3,1,6,4,2]) returns same array, containing [2,4,6,1,3].
 
+const reverseArray = array => {
+    console.log(`original array: ${array}`);
+    let n = array.length;
+    let middle = (n/2);
+    let temp = null;
+    for (let i = 0; i < middle; i++) {
+        temp = array[i];
+        array[i] = array[n-1-i];
+        array[n-1-i] = temp;
+    }
+    console.log(`updated array: ${array}`);
+}
+
+reverseArray([-2,0,1,2,3,"yeet"]);
 
 
 // 11. Outlook: Negative
