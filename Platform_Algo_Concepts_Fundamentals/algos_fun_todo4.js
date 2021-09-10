@@ -18,13 +18,26 @@ const onlyKeepTheLastFew = (array, number) => {
     console.log(`updated array: ${array}`);
 }
 
-onlyKeepTheLastFew([2, 4, 6, 8, 10], 3);
-onlyKeepTheLastFew([-2, 0, 1, 2, 3], 3);
+// onlyKeepTheLastFew([2, 4, 6, 8, 10], 3);
+// onlyKeepTheLastFew([-2, 0, 1, 2, 3], 3);
 
 
 
 // 1. Math Help
 // Cartman doesn’t really like math; he needs help. You are given two numbers – coefficients M and B in the equation Y = MX + B. Build a function to return the X-intercept (his older cousin Fiaz wisely reminds him that X-intercept is the value of X where Y equals zero; Cartman just snorts in his general direction).
+
+// given two numbers - m,b
+const mathHelp = (m,b) => {
+// m and b are coefficients in y = mx + b
+// build function to return x-intercept (value of x where y = 0)
+    let y = 0;
+    // y = m*x + b;
+    x = (y-b)/m;
+    // x = y/m;
+    console.log(`x: ${x}, y: ${y}, m: ${m}, b:${b}`);
+}
+
+// mathHelp(3,2);
 
 
 
