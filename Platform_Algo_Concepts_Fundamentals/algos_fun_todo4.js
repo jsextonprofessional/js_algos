@@ -1,20 +1,25 @@
 // Fundamentals To Do 4
 
 
-// 0. Only Keep the Last Few --------- DOESNT WORK -----------
-// Stan learned something today: that directly decrementing an array’s .length immediately shortens it by that amount. Given array arr and number X, remove all except the last X elements, and return arr (changed and shorter). Given ([2,4,6,8,10],3), change the given array to [6,8,10] and return it.
+// 0. Only Keep the Last Few
+// Stan learned something today: that directly decrementing an array’s length immediately shortens it by that amount. Given array and number, remove all except the last number elements, and return array (changed and shorter). Given ([2,4,6,8,10],3), change the given array to [6,8,10] and return it.
 
+// given array and number
 const onlyKeepTheLastFew = (array, number) => {
     console.log(`original array: ${array}; number: ${number}`);
     for (let i = 0; i < array.length; i++) {
-        if (i < number) {
-            array.pop(i);
+        console.log(array[i]);
+        // remove all except the last number elements
+        if (i < number - 1) {
+            array.shift(array[i]);
         }
     }
+    // return array changed and shorter
     console.log(`updated array: ${array}`);
 }
 
-onlyKeepTheLastFew([-2,0,1,2,3], 3);
+onlyKeepTheLastFew([2, 4, 6, 8, 10], 3);
+onlyKeepTheLastFew([-2, 0, 1, 2, 3], 3);
 
 
 
