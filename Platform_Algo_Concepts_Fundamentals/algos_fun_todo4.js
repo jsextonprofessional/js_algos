@@ -112,13 +112,54 @@ const letterGrade = (score) => {
     }
 }
 
-letterGrade(100);
-letterGrade(91);
-letterGrade(85);
-letterGrade(73);
-letterGrade(69);
-letterGrade(40);
+// letterGrade(100);
+// letterGrade(91);
+// letterGrade(85);
+// letterGrade(73);
+// letterGrade(69);
+// letterGrade(40);
 
 
 // 6. More Accurate Grades
 // For an additional challenge, add ‘-’ signs to scores in the bottom two percent of A, B, C and D scores, and “+” signs to the top two percent of B, C and D scores (sorry, Mr. Cerise never gives an A+). Given 88, console.log "Score: 88. Grade: B+". Given 61, log "Score: 61. Grade: D-" .
+
+const moreAccurateGrades = (score) => {
+    if (score >= 92 && score <=100) {
+        console.log(`Score: ${score}, Letter Grade: A`);
+    } else if (score >=90 && score <=92) {
+        console.log(`Score: ${score}, Letter Grade: A-`);
+    } else if (score >=88 && score <=89) {
+        console.log(`Score: ${score}, Letter Grade: B+`);
+    } else if (score >=83 && score <=87) {
+        console.log(`Score: ${score}, Letter Grade: B`);
+    } else if (score >=80 && score <=82) {
+        console.log(`Score: ${score}, Letter Grade: B-`);
+    } else if (score >=78 && score <=79) {
+        console.log(`Score: ${score}, Letter Grade: C+`);
+    } else if (score >=72 && score <=77) {
+        console.log(`Score: ${score}, Letter Grade: C`);
+    } else if (score >=70 && score <=71) {
+        console.log(`Score: ${score}, Letter Grade: C-`);
+    } else if (score >=68 && score <=69) {
+        console.log(`Score: ${score}, Letter Grade: D+`);
+    } else if (score >=62 && score <=67) {
+        console.log(`Score: ${score}, Letter Grade: D`);
+    } else if (score >=60 && score <=61) {
+        console.log(`Score: ${score}, Letter Grade: D-`);
+    } else {
+        console.log(`Score: ${score}, Letter Grade: F`);
+    }
+}
+
+moreAccurateGrades(100);
+moreAccurateGrades(90);
+moreAccurateGrades(88);
+moreAccurateGrades(85);
+moreAccurateGrades(81);
+moreAccurateGrades(79);
+moreAccurateGrades(75);
+moreAccurateGrades(71);
+moreAccurateGrades(69);
+moreAccurateGrades(66);
+moreAccurateGrades(60);
+moreAccurateGrades(59);
