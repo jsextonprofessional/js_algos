@@ -125,13 +125,33 @@ const empireVsRebellion = (input) => {
 // From the above, derive the following that accepts and draws the given characters, not just asterisks:
 
 // drawRightChars(num,char)
-// drawCenteredChars(num,char)
 // For all three of these, you can safely assume that 'char'is a string with the length of 1.
 
-drawLeftChars(num,char) {
-
+// drawCenteredChars(num,char)
+const drawCenteredChars = (num,char) => {
+    let array = [];
+    for (var i = 0; i <= 75; i++) {
+        array.push(" ");
+        console.log(array);
+    }
+    let halfNum = Math.floor(num / 2);
+    let midpoint = Math.floor(array.length / 2);
+    // left and right hodlers?
+    let arrayMiddleLowerBound = midpoint - halfNum;
+    let arrayMiddleUpperBound = midpoint + halfNum;
+    // cut array in half
+    for (var j = 0; j < array.length; j++) {
+        // could write it to include conditionals for if input is odd or even
+        // console.log(j);
+        if (j >= arrayMiddleLowerBound && j <= arrayMiddleUpperBound) {
+            array[j] = char;
+            console.log(j);
+        }
+    }
+    console.log(`num: ${num}, array: ${array}`);
 }
 
-drawLeftChars(3,"x")
+drawCenteredChars(3,"x");
+drawCenteredChars(35,"<3")
 
 // It is imperative at this point in the bootcamp that you can rapidly complete the mandatory coding challenges from the Algorithm Platform. If you have not yet correctly answered each of them in under two minutes, then revisit the Algorithm Platform, “Reset All Challenges”, and see how speedily you can complete them. Repeat until you can reliably finish each of them in less than two minutes.
