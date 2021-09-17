@@ -3,7 +3,7 @@ The function requires the user to input an array of numbers and strings.
 The function iterates through the input array, separating said array's values into distinct stacks for operators and operands.
 The function then performs mathematical operations based on the values in each stack.
 The function yields errors for invalid input.
-The function provides user feedback for both successful and failed attempts.
+The function provides user feedback for both successful and failed cases.
 Test cases are provided, or a user can create their own.
 
 TO GET STARTED:
@@ -19,4 +19,4 @@ TO ADD CUSTOM TEST CASES:
 
 
 
-The this application was created by and is the property of Jacob Sexton.
+This application was created by and is the property of Jacob Sexton.
