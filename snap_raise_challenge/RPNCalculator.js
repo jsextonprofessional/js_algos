@@ -15,35 +15,80 @@
 // There are a range of expectations from various companies in their interviewing code exercises, from minimal code to get the job done and prove you can program, to expecting exemplary code that demonstrates how well you can design things when the occasion requires it. We tend to judge toward the latter end of the spectrum, assuming that anyone who can write well-crafted code can also scale down quality to do things quickly, but not necessarily the other way around.
 
 const RPNCalculator = (input) => {
-    console.log(`YEET -- U HEARD IT HERE FOIST -- U GOT FOISTED`);
+    console.log(`---------- FUNCTION START ----------`);
+    if (input.length == 0) {
+        console.log(`Error 1 -- Input: ${input}. Input must not be blank. Input should be array of numbers and mathematical operators.`);
+        console.log(`---------- FUNCTION ABORT ----------`);
+        return;
+    }
+    // holds symbols
     var operatorStack = [];
+    // holds numbers
     var operandStack = [];
     var newOperand = 0;
+    // check and sort input values into respective stacks for operands and operators
     for (var i = 0; i < input.length; i++) {
-        if (typeof(input[i]) === "number") {
-            console.log(`NUMBER DADi UHH`);
+        if (operandStack.length < 2 && typeof input[i] != "number") {
+            console.log(`Error 2 -- Invalid Input: ${input}. RPN operators must come after at least 2 operands; Input values must be +,*,-,/, or numbers.`);
+            console.log(`---------- FUNCTION ABORT ----------`);
+            return;
+        } else if (typeof (input[i]) === "number") {
+            // console.log(`input[i]: ${input[i]}`);
             operandStack.push(input[i]);
         } else if (input[i] == "+" || input[i] == "-" || input[i] == "*" || input[i] == "/") {
+            // console.log(`input[i]: ${input[i]}`);
             operatorStack.push(input[i]);
-            if (operatorStack[0] == "+") {
-                operatorStack.pop();
-                newOperand = operandStack[0]+operandStack[1];
-                (operandStack.shift())*2;
-            } else if (operatorStack[0] == "*") {
-                operatorStack.pop();
-            }
         } else {
-            console.log(`invalid input: ${input}`);
+            console.log(`Error 3 -- Invalid Input: ${input}. Input values must be +,*,-,/, or numbers.`);
+            console.log(`---------- FUNCTION ABORT ----------`);
+            return;
         }
     }
-    console.log(`operator stack: ${operatorStack}, operand stack: ${operandStack}`);
+    // establish newOperand as the value at the zeroeth index of operand stack
+    newOperand = operandStack[0];
+    // iterate thru operand stack starting at first index of operand stack
+    for (var j = 1; j < operandStack.length; j++) {
+        // iterate thru operator stack
+        for (var k = 0; k < operatorStack.length; k++) {
+            console.log(`newOperand: ${newOperand}, Current Operand: ${operandStack[j]}, Current Operator: ${operatorStack[k]}`);
+            // console.log(`operatorStack[k]: ${operatorStack[k]}`);
+            // apply operator[k] to operand[j] and newOperand
+            if (operatorStack[k] == "+") {
+                newOperand += operandStack[j];
+            } else if (operatorStack[k] == "*") {
+                newOperand *= operandStack[j];
+            } else if (operatorStack[k] == "-") {
+                newOperand -= operandStack[j];
+            } else {
+                newOperand = newOperand / operandStack[j];
+            }
+        }
+        console.log(`operator stack: ${operatorStack}, operand stack: ${operandStack}, newOperand: ${newOperand}`);
+        console.log(`Result: ${newOperand}`);
+        console.log(`---------- FUNCTION END ----------`);
+        return;
+    }
 }
+// ----------  TEST CASES: -------------
+// should output Result: 2
+RPNCalculator([1, 2, "+", 3, "*", 4, "-", 2, "/"]);
+// should output Result: 3
+RPNCalculator([1,3,4,2,2,"+","*","-","/"]);
+// should output Error 1
+RPNCalculator([]);
+// should output Error 2
+RPNCalculator(["+",1,3,"*",2,"-",2,"/"]);
+// should output Error 2
+RPNCalculator(["-",1,3,"*",2,"-",2,"/"]);
+// should output Error 2
+RPNCalculator(["*",1,3,"*",2,"-",2,"/"]);
+// should output Error 2
+RPNCalculator(["/",1,3,"*",2,"-",2,"/"]);
+// should output Error 2
+RPNCalculator([1,"*",2,"-",2,"/"]);
+// should output Error 2
+RPNCalculator([1,"j",3,4]);
+// should output Error 3
+RPNCalculator([1,5,"j",3,4]);
 
-// should output 1
-RPNCalculator([1,2,"+",3,"*",4,"-",2,"/"]);
-// should output ...
-// RPNCalculator([1,3,4,2,2,"+","*","-","/"]);
-// RPNCalculator(["+"]);
-// RPNCalculator(["-"]);
-// RPNCalculator(["*"]);
-// RPNCalculator(["/"]);
+
