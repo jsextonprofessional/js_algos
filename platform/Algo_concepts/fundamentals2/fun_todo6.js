@@ -45,8 +45,10 @@ const betterThreesAndFives = (start, end) => {
 // Second: can you simplify/shorten your code?
 
 const generateCoinChange = (cents) => {
+    console.log(`---------- FUNCTION START -----------`);
     let total = cents;
     let dollars = 0;
+    let halfDollar = 0;
     let quarters = 0;
     let dimes = 0;
     let nickels = 0;
@@ -55,17 +57,40 @@ const generateCoinChange = (cents) => {
         total -= 100;
         dollars += 1;
         // console.log(total,dollars);
-        console.log(`dollars: ${dollars}, quarters: ${quarters}, dimes: ${dimes}, nickels: ${nickels}, pennies: ${pennies}.`);
-    } 
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
+    }
+    if (total > 50) {
+        total -= 50;
+        halfDollar += 1;
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
+    }
     while (total > 25) {
         total -= 25;
         quarters += 1;
-        console.log(`dollars: ${dollars}, quarters: ${quarters}, dimes: ${dimes}, nickels: ${nickels}, pennies: ${pennies}.`);
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
     }
+    while (total > 10) {
+        total -= 10;
+        dimes += 1;
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
+    }
+    while (total > 5) {
+        total -= 5;
+        nickels += 1;
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
+    }
+    while (total > 1) {
+        total -= 1;
+        pennies += 1;
+        console.log(`Cents: ${cents}, Total: ${total}. Dollars: ${dollars}, Half-Dollar: ${halfDollar}, Quarters: ${quarters}, Dimes: ${dimes}, Nickels: ${nickels}, Pennies: ${pennies}.`);
+    }
+    console.log(`---------- FUNCTION END -----------`);
 }
 
-// generateCoinChange(69);
-generateCoinChange(420);
+generateCoinChange(69);
+// generateCoinChange(420);
+// generateCoinChange(9);
+// generateCoinChange(1068);
 
 
 // Third: add half-dollar (50 cents) and dollar (100 cents) coins with 40 additional characters or less.
