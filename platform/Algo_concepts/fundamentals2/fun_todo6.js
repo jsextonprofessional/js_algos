@@ -160,7 +160,7 @@ const fibonacci = (input) => {
     var hodler = [];
     for (var i = 0; i <= input; i++) {
         // console.log(`hodler.length: ${hodler.length}`);
-        if (hodler.length >= 2) {
+        if (hodler.length > 1) {
             counter = hodler[hodler.length-1] + hodler[hodler.length-2];
             hodler.push(counter);
             console.log(`input: ${input}, counter: ${counter}`);
@@ -172,28 +172,7 @@ const fibonacci = (input) => {
     console.log(`Final value: ${hodler[hodler.length-1]}`);
     console.log(`---------- FUNCTION END ----------`);
 }
-    // if (input == 0) {
-    //     console.log(`Final value: ${input}`);
-    //     console.log(`---------- FUNCTION EARLY END ----------`);
-    //     return;
-    // } else if (input == 1 || input == 2) {
-    //     console.log(`Final value ${input}`);
-    //     console.log(`---------- FUNCTION EARLY END ----------`);
-    //     return;
-    // } else {
-    //     for (var i = 0; i < input; i++) {
-    //         if (i < 3) {
-    //             hodler.push(i);
-    //         } else {
-    //             hodler.push(i + hodler[i-1]);
-    //             console.log(`i: ${i}; hodler: ${hodler}`);
-    //             console.log(`input-1: ${input-1}, PLUS input: ${input}`);
-    //             counter = input-1 + input;
-    //         }
-    //     }
-    // }
 
-// 0 acts weird
 fibonacci(0);
 fibonacci(1);
 fibonacci(2);
@@ -204,10 +183,15 @@ fibonacci(6);
 fibonacci(7);
 
 
-
 // 5. Sum to One Digit
 // Kaitlin sees beauty in numbers, but also believes that less is more. Implement sumToOne(num) that sums a given integer’s digits repeatedly until the sum is only one digit. Return that one-digit result. 
 // Example: sumToOne(928) returns 1, because 9+2+8 = 19, then 1+9 = 10, then 1+0 = 1.
+
+const sumToOneDigit = (input) => {
+    
+}
+
+sumToOneDigit();
 
 
 // 6. Clock Hand Angles
