@@ -111,10 +111,10 @@ const messyMath = (num) => {
         if (count == num / 3) {
             console.log(`RETURNING -1 ALLEGEDLY -- count: ${count}, sum: ${sum}, 1/3 of num: ${num / 3}`);
             return (-1);
-        // If current count (not num) is evenly divisible by 3, don’t add to the sum; skip to the next count;
+            // If current count (not num) is evenly divisible by 3, don’t add to the sum; skip to the next count;
         } else if (count % 3 == 0 && count != 0) {
             console.log(`SKIPPING BC DIVISIBLE BY THREE -- count: ${count}, sum: ${sum}`);
-        // Otherwise, if the current count is evenly divisible by 7, include it twice in sum instead of once
+            // Otherwise, if the current count is evenly divisible by 7, include it twice in sum instead of once
         } else if (count % 7 == 0 && count != 0) {
             sum += count;
             sum += count;
@@ -128,20 +128,81 @@ const messyMath = (num) => {
 }
 
 // if given num is 4, return 7. 
-messyMath(4);
+// messyMath(4);
 // If given num is 8, return 34. 
-messyMath(8);
+// messyMath(8);
 // If given num is 15, return -1.
-messyMath(15);
+// messyMath(15);
 
 
 // 3. Twelve-Bar Blues
 // Write a function that console.logs the number 1, then "chick", then "boom", then "chick", then 2, then "chick", "boom", "chick" – continuing the same cycle for each number up to (including) 12.
 
+const twelveBarBlues = () => {
+    for (var i = 0; i < 13; i++) {
+        console.log(i);
+        console.log(`Chick`);
+        console.log(`Boom`);
+        console.log(`Chick`);
+    }
+}
+
+// twelveBarBlues();
+
 
 // 4. Fibonacci
 // Create a function to generate Fibonacci numbers. In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1. Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc). 
 // Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1)+fib(2), or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8), etc.
+
+const fibonacci = (input) => {
+    console.log(`---------- FUNCTION START ----------`);
+    var counter = 0;
+    var hodler = [];
+    for (var i = 0; i <= input; i++) {
+        // console.log(`hodler.length: ${hodler.length}`);
+        if (hodler.length >= 2) {
+            counter = hodler[hodler.length-1] + hodler[hodler.length-2];
+            hodler.push(counter);
+            console.log(`input: ${input}, counter: ${counter}`);
+        } else {
+            hodler.push(i);
+            console.log(`input: ${input}, counter: ${counter}`);
+        }
+    }
+    console.log(`Final value: ${hodler[hodler.length-1]}`);
+    console.log(`---------- FUNCTION END ----------`);
+}
+    // if (input == 0) {
+    //     console.log(`Final value: ${input}`);
+    //     console.log(`---------- FUNCTION EARLY END ----------`);
+    //     return;
+    // } else if (input == 1 || input == 2) {
+    //     console.log(`Final value ${input}`);
+    //     console.log(`---------- FUNCTION EARLY END ----------`);
+    //     return;
+    // } else {
+    //     for (var i = 0; i < input; i++) {
+    //         if (i < 3) {
+    //             hodler.push(i);
+    //         } else {
+    //             hodler.push(i + hodler[i-1]);
+    //             console.log(`i: ${i}; hodler: ${hodler}`);
+    //             console.log(`input-1: ${input-1}, PLUS input: ${input}`);
+    //             counter = input-1 + input;
+    //         }
+    //     }
+    // }
+
+// 0 acts weird
+fibonacci(0);
+fibonacci(1);
+fibonacci(2);
+fibonacci(3);
+fibonacci(4);
+fibonacci(5);
+fibonacci(6);
+fibonacci(7);
+
 
 
 // 5. Sum to One Digit
