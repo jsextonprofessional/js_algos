@@ -173,14 +173,14 @@ const fibonacci = (input) => {
     console.log(`---------- FUNCTION END ----------`);
 }
 
-fibonacci(0);
-fibonacci(1);
-fibonacci(2);
-fibonacci(3);
-fibonacci(4);
-fibonacci(5);
-fibonacci(6);
-fibonacci(7);
+// fibonacci(0);
+// fibonacci(1);
+// fibonacci(2);
+// fibonacci(3);
+// fibonacci(4);
+// fibonacci(5);
+// fibonacci(6);
+// fibonacci(7);
 
 
 // 5. Sum to One Digit
@@ -188,16 +188,56 @@ fibonacci(7);
 // Example: sumToOne(928) returns 1, because 9+2+8 = 19, then 1+9 = 10, then 1+0 = 1.
 
 const sumToOneDigit = (input) => {
-    
+    var total = 0;
+    var onesHodler = 0;
+    var tensHodler = 0;
+    var hundredsHodler = 0;
+    while (input > 100) {
+        hundredsHodler += 1;
+        input -= 100;
+        console.log(`total: ${total}, hundredsHodler: ${hundredsHodler}, tensHodler: ${tensHodler}, onesHodler: ${onesHodler}.`);
+    }
+    while (input > 10) {
+        tensHodler += 1;
+        input -= 10;
+        console.log(`total: ${total}, hundredsHodler: ${hundredsHodler}, tensHodler: ${tensHodler}, onesHodler: ${onesHodler}.`);
+    }
+    while (input > 1) {
+        onesHodler += 1;
+        input -= 1;
+        console.log(`total: ${total}, hundredsHodler: ${hundredsHodler}, tensHodler: ${tensHodler}, onesHodler: ${onesHodler}.`);
+    }
+    total = onesHodler + tensHodler + hundredsHodler;
+    if (total > 9) {
+        sumToOneDigit(total);
+        console.log(`total: ${total}, hundredsHodler: ${hundredsHodler}, tensHodler: ${tensHodler}, onesHodler: ${onesHodler}.`);
+    } else {
+        console.log(`total: ${total}, hundredsHodler: ${hundredsHodler}, tensHodler: ${tensHodler}, onesHodler: ${onesHodler}.`);
+    }
 }
 
-sumToOneDigit();
+// should return 1
+// sumToOneDigit(928);
 
 
 // 6. Clock Hand Angles
 // Regardless of how hard a Dojo student works (and they should work hard), they need time now and then to unwind – like hands on a clock. Traditional clocks are increasingly uncommon, but most can still read an analog clock’s hands of hours, minutes and seconds. Create clockHandAngles(seconds) that, given a number of seconds since 12:00:00, prints angles (in degrees) of the hour, minute and second hands. As a review, 360 degrees form a full rotation. For input of 3600 secs (equivalent to 1:00:00), print "Hour hand: 30 degs. Minute hand: 0 degs. Second hand: 0 degs." For an input parameter seconds of 119730 (which is equivalent to 9:15:30 plus 24 hours!), you should log "Hour hand: 277.745 degs. Minute hand: 93 degs. Second hand: 180 degs." 
 // Note: in the second example, the angle for the minute hand is not simply 90 degrees; it has advanced a bit further, because of the additional 30 seconds in that minute so far.
 // Second: also calculate and print degrees for an additional “week hand” that rotates once each week.
+
+const clockHandAngles = (seconds) => {
+    var hourHand = 0;
+    var minuteHand = 0;
+    var secondHand = 0;
+    if (seconds > 100) {
+        secondHand += 1;
+        seconds -= 100;
+    }
+    console.log(`Hour Hand: ${hourHand} degrees. Minute Hand: ${minuteHand} degrees. Second Hand: ${secondHand} degrees.`);
+}
+
+// should return 1:00:00
+clockHandAngles(3600);
 
 
 // 7. Is Prime
